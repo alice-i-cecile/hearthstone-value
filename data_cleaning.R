@@ -120,15 +120,14 @@ for (i in 1:nrow(cards)){
 
 # Mechanics ####
 
-# Battlecry
+# Battlecry ##
+# Can have special effect of mechanic effect
 
 # Bounce ##
-
 # To hand
 # To deck
 
 # Buff ##
-
 # Stat
 # Effect
 
@@ -140,7 +139,8 @@ for (i in 1:nrow(cards)){
 
 # Damage
 
-# Deathrattle
+# Deathrattle ##
+# Can have special effect of mechanic effect
 
 # Destroy
 
@@ -157,7 +157,6 @@ for (i in 1:nrow(cards)){
 # Forgetful
 
 # Gain mana ##
-
 # permanent (full)
 # permanent (empty)
 # temporary
@@ -181,7 +180,6 @@ for (i in 1:nrow(cards)){
 # Secret
 
 # Set stats ##
-
 # Attack
 # Health
 
