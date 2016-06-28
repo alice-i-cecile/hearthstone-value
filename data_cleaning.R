@@ -92,11 +92,23 @@ for (i in 1:nrow(cards)){
 
 # Links to a card ID for the effect that is created
 
-# Battlecry ##
+# Triggered Effects ####
 
-# Deathrattle ##
+# Enemy
+# Friendly
 
-# Enrage ##
+# Characters
+# Minions
+# This
+
+# Cast Spell
+# Play Card
+# Play Minion
+# Damaged
+# Healed
+# Dies
+
+# Tribal Effects ####
 
 # Tribal (on board) ##
 
@@ -106,32 +118,99 @@ for (i in 1:nrow(cards)){
 
 # Affects all but tribals ##
 
-# Secrets ##
+# Mechanics ####
 
-# Joust ##
+# Battlecry
 
-# Shuffle into deck ##
+# Bounce ##
 
-# When your opponent casts a spell ##
+# To hand
+# To deck
 
-# When you cast a spell ##
+# Buff ##
 
-# When you play a card ##
+# Stat
+# Effect
 
-# When a minion is healed ##
+# Charge
 
-# When anything is healed ##
+# Choose One
 
-# Whenever a friendly minion dies ####
+# Combo
 
-# When this minion deals damage ####
+# Damage
 
-# Choose one ##
+# Deathrattle
+
+# Destroy
+
+# Discover
+
+# Divine Shield
+
+# Draw
+
+# Enrage
+
+# Freeze
+
+# Forgetful
+
+# Gain mana ##
+
+# permanent (full)
+# permanent (empty)
+# temporary
+
+# Healing
+
+# Immune
+
+# Inspire
+
+# Joust
+
+# Overload
+
+# Poisonous
+
+# Random Card to Deck (?)
+
+# Random Card to Hand
+
+# Secret
+
+# Set stats ##
+
+# Attack
+# Health
+
+# Shuffle into Deck
+
+# Spell Damage
+
+# Stealth
+
+# Summon
+
+# Taunt
+
+# Untargettable
+
+# Windfury
 
 # Self mechanics ####
 
+# Charge ##
+cards$unexplained_text[cards$CHARGE] <- str_replace_all(cards$unexplained_text[cards$CHARGE], "<b>Stealth</b>", "")
+
 # Divine shield ##
 cards$unexplained_text[cards$DIVINE_SHIELD] <- str_replace_all(cards$unexplained_text[cards$DIVINE_SHIELD], "<b>Divine Shield</b>", "")
+
+# Forgetful ##
+
+# Poisonous ##
+cards$unexplained_text[cards$POISONOUS] <- str_replace_all(cards$unexplained_text[cards$POISONOUS], "Destroy any minion damaged by this minion.", "")
 
 # Stealth ##
 cards$unexplained_text[cards$STEALTH] <- str_replace_all(cards$unexplained_text[cards$STEALTH], "<b>Stealth</b>", "")
@@ -139,16 +218,10 @@ cards$unexplained_text[cards$STEALTH] <- str_replace_all(cards$unexplained_text[
 # Taunt ##
 cards$unexplained_text[cards$TAUNT] <- str_replace_all(cards$unexplained_text[cards$TAUNT], "<b>Taunt</b>", "")
 
-# Charge ##
-cards$unexplained_text[cards$CHARGE] <- str_replace_all(cards$unexplained_text[cards$CHARGE], "<b>Stealth</b>", "")
-
 # Windfury ##
 cards$unexplained_text[cards$WINDFURY] <- str_replace_all(cards$unexplained_text[cards$WINDFURY], "<b>Windfury</b>", "")
 
-# Poisonous ##
-cards$unexplained_text[cards$POISONOUS] <- str_replace_all(cards$unexplained_text[cards$POISONOUS], "Destroy any minion damaged by this minion.", "")
-
-# Forgetful ##
+# Exception Handling ####
 
 # Fix missing flags
 cards$FORGETFUL[which(str_detect(cards$text, "50% chance to attack the wrong enemy."))] <- TRUE 
@@ -157,8 +230,6 @@ cards$FORGETFUL[which(str_detect(cards$text, "50% chance to attack the wrong ene
 cards[which(cards$name=="Mogor the Ogre"), "FORGETFUL"] <- FALSE # Missing flag
 
 cards$unexplained_text[cards$FORGETFUL] <- str_replace_all(cards$unexplained_text[cards$FORGETFUL], "50% chance to attack the wrong enemy.", "")
-
-# Spell power ##
 
 # Fix missing flags
 cards$SPELLPOWER[which(str_detect(cards$name, "Velen's Chosen"))] <- TRUE
@@ -173,37 +244,3 @@ cards$SPELLPOWER[cards$SPELLPOWER] <- str_extract(
 
 # Remove explained text
 cards$unexplained_text[cards$SPELLPOWER] <- str_replace_all(cards$unexplained_text[cards$SPELLPOWER], "Spell Damage \\+[0-9]+", "")
-
-# Untargetable ##
-
-# Overload ##
-
-# Gain mana crystals this turn ##
-
-# Permanently change mana crystals ##
-
-# Targeted mechanics ####
-
-# Draw cards ##
-
-# Discover ##
-
-# Gain random cards ##
-
-# Damage ##
-
-# Healing ##
-
-# Stat buffs ##
-
-# Mechanic buffs ##
-
-# Bounce ##
-
-# Set attack to 1 ##
-
-# Set health to 1 ##
-
-# Freeze ##
-
-# Destroy ##
