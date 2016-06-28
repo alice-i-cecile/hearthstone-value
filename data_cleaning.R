@@ -28,11 +28,10 @@ cards <- subset(cards, select=-c(flavor,
                                  collectible,
                                  howToEarn,
                                  howToEarnGolden,
-                                 playRequirements,
                                  faction,
                                  entourage,
                                  targetingArrowText,
-                                 textInPlay))
+                                 dust))
 
 
 # Converting mechanics into a regression friendly format ####
@@ -55,27 +54,27 @@ for (i in 1:nrow(cards)){
 
 # Targeting paradigms ####
 
-# Numeric
+# Numeric ##
 
-# Random
+# Random ##
 
-# All
-
-
-# Minions
-
-# Heroes
-
-# Both
+# All ##
 
 
-# Self
+# Minions ##
 
-# Friendly only
+# Heroes ##
 
-# Enemy only
+# Both ##
 
-# Both
+
+# Self ##
+
+# Friendly only ##
+
+# Enemy only ##
+
+# Both ##
 
 # Conditional mechanics ####
 
@@ -91,7 +90,7 @@ for (i in 1:nrow(cards)){
 
 # Tribal (in hand) ##
 
-# Only affects tribals ###
+# Only affects tribals ##
 
 # Affects all but tribals ##
 
