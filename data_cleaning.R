@@ -54,27 +54,39 @@ for (i in 1:nrow(cards)){
 
 # Targeting paradigms ####
 
-# Numeric ##
+# One Target ## 
 
-# Random ##
+# Minion OR
+# Character OR
+# Hero
 
-# All ##
+# Friendly OR
+# Enemy OR
+# Both (can target either)
 
+# Random OR
+# Chosen
 
-# Minions ##
+# May have requirement(s) (must be a Demon, undamaged, etc.)
 
-# Heroes ##
+# Area of Effect ##
 
-# Both ##
+# Minions OR
+# Characters
 
+# Friendly OR
+# Enemy OR
+# Both (All)
 
-# Self ##
+# May have requirement(s) (all Beasts, Deathrattles, etc.)
 
-# Friendly only ##
+# Other cases ##
 
-# Enemy only ##
-
-# Both ##
+# Exactly 2 targets (random)
+# Adjacent Minions
+# Targeting weapons
+# Cards with multiple effects (ie. Shadowflame, Swipe, Darkshire Librarian)
+# Other complex spells (case by case ie. Brawl, Enter the Coliseum)
 
 # Conditional mechanics ####
 
